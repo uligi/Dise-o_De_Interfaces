@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.solucionesphapp.ui.theme.SolucionesPHAppTheme
 
@@ -17,7 +18,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SolucionesPHAppTheme {
-                // Pantalla de inicio de sesión
                 LoginScreen()
             }
         }
@@ -36,7 +36,7 @@ fun LoginScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Iniciar Sesión", style = MaterialTheme.typography.h4)
+        Text(text = "Iniciar Sesión", style = MaterialTheme.typography.headlineLarge)
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -61,11 +61,8 @@ fun LoginScreen() {
 
         Button(
             onClick = {
-                // Aquí puedes agregar la lógica para autenticar al usuario
                 if (username.isNotEmpty() && password.isNotEmpty()) {
-                    // Autenticar con el servidor
                     println("Iniciando sesión con el usuario $username")
-                    // Aquí se redirige a la siguiente pantalla según el rol del usuario
                 } else {
                     println("Por favor ingrese todos los datos")
                 }
